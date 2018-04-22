@@ -11,3 +11,5 @@ int MaxSubseqSum( int A[], int N){
     }
     return MaxMum;
 }
+
+//T(N) = O(N)
