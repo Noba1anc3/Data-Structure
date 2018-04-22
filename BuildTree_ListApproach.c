@@ -1,3 +1,24 @@
+//input format:
+/*  8          (NUM_OF_NODE)   - means the node have no side-son
+    A 1 2      (0)             A means node name
+    B 3 4      (1)
+    C 5 -      (2)
+    D - -      (3)
+    E 6 -      (4)
+    G 7 -      (5)
+    F - -      (6)
+    H - -      (7)
+*/
+
+/* 
+
+    Tree_Architecture
+      A  B  C  D  E  G  F  H
+Left  1  3  5 -1  6  7 -1 -1
+Right 2  4 -1 -1 -1 -1 -1 -1
+
+*/
+
 #define MaxTree 10
 #define ElementType char
 #define Tree int
