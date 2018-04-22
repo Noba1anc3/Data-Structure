@@ -19,6 +19,9 @@ Right 2  4 -1 -1 -1 -1 -1 -1
 
 */
 
+// check[] for find the root of the tree
+// traversal the list, if there is a node that no other node point to it, then it is the root of the tree
+
 #define MaxTree 10
 #define ElementType char
 #define Tree int
