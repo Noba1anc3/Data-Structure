@@ -3,14 +3,14 @@ BinTree DeleteInBSTree(ElementType X, BinTree BST){
   if(!BST)
     printf("None");
   else if( X < BST->Data)
-    BST->Data = Delete(X,BST->Left);
+    BST->Left = DeleteInBSTree(X,BST->Left);
   else if( X > BST->Data)
-    BST->Data = Delete(X,BST->Right);
+    BST->Right = DeleteInBsTree(X,BST->Right);
   else{
     if(BST->Left && BST->Right){
         Tmp = FindMin(BST->Right);
         BST->Data = Tmp->Data;
-        BST->Right = Delete(BST->Data,BST->Right);
+        BST->Right = DeleteInBsTree(BST->Data,BST->Right);
     }
     else{
       Tmp = BST;
