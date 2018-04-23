@@ -1,4 +1,4 @@
-BST DeleteInBSTree(ElementType X, BinTree BST){
+BinTree DeleteInBSTree(ElementType X, BinTree BST){
   Position Tmp;
   if(!BST)
     printf("None");
