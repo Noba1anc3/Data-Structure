@@ -29,6 +29,10 @@ child points to its father.*/
    Yes
    There are 2 components */
 
+/* When A tree is unioned to B tree, it is significant to attach a shorter one to a longer one.
+   As shown in the chart, the head node of each tree used to be -1, and now it is (the height of the tree)*(-1) 
+   When it is initializing, it is advisable to set the value as -1, means that the height of the tree(only the node) is one */
+
 typedef int ElementType;
 typedef int SetName;
 typedef ElementType SetType[MaxSize];
@@ -81,7 +85,7 @@ void Check_Connection(SetType S){
 void Check_network(SetType S, int n){
   int i, counter = 0;
   for(i = 0;i < n;i++)
-    if(S[i] = -1)
+    if(S[i] < 0)
       counter++;
   if(counter == 1)
     printf("Connected");
@@ -89,10 +93,16 @@ void Check_network(SetType S, int n){
     printf("there are %d components.\n",counter);
  }
  
- SetName Find(SetType S, ElementType X){
+SetName Find(SetType S, ElementType X){
   for(;S[X]>=0;X=S[X])
     return X;
  
- void Union(SetType S, SetName Root1, SetName Root2){
-  S[Root2] = Root1;
+void Union(SetType S, SetName Root1, SetName Root2){
+  if((-1)*S[Root2] > (-1)*S[Root1])
+  //if(S[Root2] < S[Root1])
+    S[Root1] = Root2;
+  else{
+    if(S[Root2] == S[Root1])
+      S[Root1]--; 
+   S[Root2] = Root1;
 }
