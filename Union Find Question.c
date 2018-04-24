@@ -1,6 +1,34 @@
 
-/* Union Find Question
-  
+/* Union Find Question */
+
+/* Use Tree-structure to describe Set, every node in the tree represents an element in the set.
+The architecture in the tree-structure is different from the normal structure, in this question,
+child points to its father.*/
+
+/*
+  ————  ———— ———— ———— ———— ———— ———— ————
+｜index|  0 |  1 |  2 |  3 |  4 |  5 |  6 |
+  ————  ———— ———— ———— ———— ———— ———— ————
+｜  S  |  6 |  6 | -1 |  4 |  2 |  2 | -1 |
+  ————  ———— ———— ———— ———— ———— ———— ————
+*/
+
+/* Input Format
+   5
+   C 3 2
+   I 3 2
+   C 1 5
+   I 4 5
+   I 2 4
+   C 3 5
+   S        */
+
+/* Output Format
+   No
+   Yes
+   Yes
+   There are 2 components */
+
 typedef int ElementType;
 typedef int SetName;
 typedef ElementType SetType[MaxSize];
