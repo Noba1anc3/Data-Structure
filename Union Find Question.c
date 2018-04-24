@@ -29,9 +29,18 @@ child points to its father.*/
    Yes
    There are 2 components */
 
-/* When A tree is unioned to B tree, it is significant to attach a shorter one to a longer one.
+/* To Optimize the function Union(): When A tree is unioned to B tree, it is significant to attach a shorter one to a longer one.
    As shown in the chart, the head node of each tree used to be -1, and now it is (the height of the tree)*(-1) 
    When it is initializing, it is advisable to set the value as -1, means that the height of the tree(only the node) is one */
+
+/* To Optimize the function Find(): Path Compressing
+the new function find() transfer every son and itsgrandson of a head node into the sons of the head node.
+
+The Old Ver:
+              SetName Find(SetType S, ElementType X){
+               for(;S[X]>=0;X=S[X])
+                 return X;
+*/
 
 typedef int ElementType;
 typedef int SetName;
@@ -94,8 +103,10 @@ void Check_network(SetType S, int n){
  }
  
 SetName Find(SetType S, ElementType X){
-  for(;S[X]>=0;X=S[X])
+  if(S[X] < 0)
     return X;
+  else
+    return S[X] = Find(S,S[X]);
  
 void Union(SetType S, SetName Root1, SetName Root2){
   if((-1)*S[Root2] > (-1)*S[Root1])
