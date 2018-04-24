@@ -18,4 +18,4 @@ HuffmanTree HuffmanTree( MinHeap H){
   return T;
 }
 
-//O(Nlog2N)
+//O(NlogN)
