@@ -20,7 +20,7 @@ typedef PtrToGNode MGraph;
 
 MGraph CreateGraph(int VertexNum){
   Vertex V, W;
-  Mgraph Graph;
+  MGraph Graph;
   
   Graph = (MGraph)malloc(sizeof(struct GNode));
   Graph->Nv = VertexNum;
@@ -59,5 +59,16 @@ MGraph BuildGraph(){
   return Graph;
 }
 
-
+bool Floyd(MGraph Graph, WeightType D[][MaxVertexNum], Vertex path[][MaxVertexNum]){
+  Vertex i,j,k;
+  
+  for(i = 0;i < Graph->Nv; i++)
+    for(j = 0; j < Graph->Nv; j++){
+      D[i][j] = Graph->G[i][j];
+      path[i][j] = 1;
+    }
+  
+  for(k = 0;k < Graph->Nv; i++)
+      for(i = 0;i < Graph->Nv; i++)
+          for(j = 0;j < Graph->Nv; i++)
 
