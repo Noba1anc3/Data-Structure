@@ -1,3 +1,5 @@
+//https://www.bilibili.com/video/av18586085/?p=96
+
 #define MaxVertexNum 100
 #define INFINITY 65535
 typedef int Vertex
@@ -79,3 +81,28 @@ bool Floyd(MGraph Graph, WeightType D[][MaxVertexNum], Vertex path[][MaxVertexNu
   return true;
 }
 
+WeightType FindMaxDist(WeightType D[][MaxVertexNum], Vertex i, int N){
+  WeightType MaxDist;
+  Vertex j;
+  
+  MaxDist = 0;
+  for(j = 0; j < N; j++)
+    if(i!=j && D[i][j] > MaxDist)
+      MaxDist = D[i][j];
+  return MaxDist;
+
+void FindAnimal(MGraph Graph){
+  WeightType D[MaxVertexNum][MaxVertexNum], MaxDist, MinDist;
+  Vertex Animal, i;
+  Floyd(Graph, D);
+  MinDist = INFINITY;
+  for(i = 0;i<Graph->Nv;i++){
+    MaxDist = FindMaxDist(D,i,Graph->Nv);
+    
+    if(MinDist > MaxDist){
+      Mindist = MaxDiost;
+      Animal = i + 1;
+    }
+  }
+  printf("%d %d\n",Animal, MinDist);
+}
