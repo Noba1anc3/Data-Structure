@@ -124,7 +124,7 @@ void FindAnimal(MGraph Graph){
 }
 
 int main(){
-    Graph G = BuildGraph();
+    MGraph G = BuildGraph();
     FindAnimal(G);
     return 0;
 }
