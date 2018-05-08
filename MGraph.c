@@ -1,5 +1,21 @@
 //https://www.bilibili.com/video/av18586085/?p=96
 
+//input format:
+/*
+    6 11  (nodes and edges)
+    3 4 70
+    1 2 1
+    5 4 50
+    2 6 50
+    5 6 60
+    1 3 70
+    4 6 60
+    3 6 80
+    5 1 100
+    2 4 60
+    5 2 80
+*/
+
 #define MaxVertexNum 100
 #define INFINITY 65535
 typedef int Vertex
