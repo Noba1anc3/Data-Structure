@@ -122,3 +122,9 @@ void FindAnimal(MGraph Graph){
   }
   printf("%d %d\n",Animal, MinDist);
 }
+
+int main(){
+    Graph G = BuildGraph();
+    FindAnimal(G);
+    return 0;
+}
