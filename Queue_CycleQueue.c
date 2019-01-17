@@ -1,8 +1,8 @@
 #define MAXSIZE 100
 
 typedef struct{
- ElemType  *base;  //内存分配的基地址
-	int	 front;
+ 	ElemType  *base;  //内存分配的基地址
+	int  front;
 	int  rear;
 }cycleQueue;
 
