@@ -1,7 +1,7 @@
 void PreOrderTraversal(BinTree BT){
   BinTree T = BT;
   Stack S = CreateStack(MaxSize);
-  while(T || NotEmpty(S)){
+  while(T || !Empty(S)){
     while(T){
       Push(S,T);
       printf("%d", T->data);
