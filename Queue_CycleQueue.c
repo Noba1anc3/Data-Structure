@@ -22,6 +22,7 @@ int InsertQueue(cycleQueue *q, ElemType e){
 	q->rear = (q->rear+1) % MAXSIZE;
 	return 1;
 }
+
 int DeleteQueue(cycleQueue q, ElemType *e){
 	if( q->front == q->rear )
 		return 0;
