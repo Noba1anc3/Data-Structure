@@ -4,13 +4,13 @@ void LevelOrderTraversal(BinTree BT){
   if(!BT)
     return;
   Q = CreateQueue(MaxSize);
-  AddQ(Q,BT);
-  While(!IsEmpty(Q)){
+  AddQ(Q, BT);
+  While(!Empty(Q)){
     T = DeleteQ(Q);
-    printf("%d",T->data);
+    printf("%d", T->data);
     if(T->Left) 
-      AddQ(Q,T->Left);
+      AddQ(Q, T->Left);
     if(T->Right)
-      AddQ(Q,T->Right);
+      AddQ(Q, T->Right);
   }
 }
