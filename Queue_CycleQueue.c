@@ -6,24 +6,26 @@ typedef struct{
 	int  rear;
 }cycleQueue;
 
-void initQueue(cycleQueue *q){
+int initQueue(cycleQueue *q){
 	q->base = (ElemType *) malloc( MAXSIZE * sizeof(ElemType) );
 	if( !q->base ){
-		exit(0)
+		return 0;
 	}
 	q->front = q->rear = 0;
+	return 1;
 }
 
-void InsertQueue(cycleQueue *q, ElemType e){
+int InsertQueue(cycleQueue *q, ElemType e){
 	if( (q->rear+1) % MAXSIZE == q->front )
-		return;
+		return 0;
 	q->base[q->rear] = e;
 	q->rear = (q->rear+1) % MAXSIZE;
+	return 1;
 }
-
-DeleteQueue(cycleQueue q, ElemType *e){
+int DeleteQueue(cycleQueue q, ElemType *e){
 	if( q->front == q->rear )
-		return;
+		return 0;
 	*e = q->base[q->front];
 	q->front = (q->front+1) % MAXSIZE;
+	return 1;
 }
