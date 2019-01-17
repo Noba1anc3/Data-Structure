@@ -1,12 +1,12 @@
 void InOrderTraversal(BinTree BT){
   BinTree T = BT;
   Stack S = CreateStack(MaxSize);
-  while(T || IsEmpty(S)){
+  while(T || !Empty(S)){
     while(T){
       Push(S,T);
       T = T->left;
     }
-    if(!IsEmpty(S)){
+    if(!Empty(S)){
       T = Pop(S);
       printf("%d", T->data);
       T = T->right;
