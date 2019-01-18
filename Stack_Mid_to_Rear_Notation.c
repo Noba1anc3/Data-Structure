@@ -4,7 +4,7 @@
 
 #define STACK_INIT_SIZE	20
 #define STACK_INCREMENT	10
-#define MAXBUFFER 		10
+#define MAXBUFFER 	10
 
 typedef char ElemType;
 typedef struct
@@ -21,7 +21,7 @@ int InitStack(sqStack *s)
 		return 0;
 	s->top = s->base;
 	s->stackSize = STACK_INIT_SIZE;
-  return 1;
+	return 1;
 }
 
 int Push(sqStack *s, ElemType e)
@@ -34,7 +34,7 @@ int Push(sqStack *s, ElemType e)
 	}
 	*(s->top) = e;
 	s->top++;
-  return 1;
+  	return 1;
 }
 
 int Pop(sqStack *s, ElemType *e)
@@ -42,7 +42,7 @@ int Pop(sqStack *s, ElemType *e)
 	if(s->top == s->base)
 		return 0;
 	*e = *--(s->top);
-    return 1;
+    	return 1;
 }
 
 int stackLen(sqStack s)
