@@ -1,9 +1,8 @@
-typedef struct HeapStruct *MaxHeap;
 struct HeapStruct{
   ElementType *Elements;
   int Size;
   int Capacity;
-}
+}HeapStruct, *MaxHeap;
 
 MaxHeap CreateMaxHeap(int MaxSize){
   MaxHeap H = malloc(sizeof(struct HeapStruct));
