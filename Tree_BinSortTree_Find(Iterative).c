@@ -1,6 +1,6 @@
 // cause the RecursionVer of FindInBSTree is a rear-recursion code, it can be transformed to iterationVer.
 
-Position FindInBSTree_NonIterationVer(ElementType x, BinTree BST){
+Position FindInBSTree_IterationVer(ElementType x, BinTree BST){
   while(BST){
     if(x > BST->Data)
       BST = BST -> Right;
