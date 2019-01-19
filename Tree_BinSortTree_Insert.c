@@ -1,6 +1,6 @@
 BinTree InsertInBSTree(ElementType X, BinTree BST){
   if(!BST){
-    BST = malloc(sizeof(struct TreeNode));
+    BST = (BTree)malloc(sizeof(struct BTNode));
     BST->Data = X;
     BST->Left = BST->Right = NULL;
   }
