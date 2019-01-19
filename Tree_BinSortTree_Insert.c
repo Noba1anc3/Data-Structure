@@ -6,9 +6,9 @@ BinTree InsertInBSTree(ElementType X, BinTree BST){
   }
   else{
     if(X < BST->Data)
-      BST->Left = InsertInBSTree(X,BST->Left);
+      BST->Left = InsertInBSTree(X, BST->Left);
     else
-      BST->Right = InsertInBSTree(X,BST->Right);
+      BST->Right = InsertInBSTree(X, BST->Right);
   }
   return BST;
 }
