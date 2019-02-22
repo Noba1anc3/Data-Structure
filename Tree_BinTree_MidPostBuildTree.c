@@ -7,20 +7,20 @@ BinTree ReBuildTree(char *post, int i, int j, char *in, int m, int n)
     p->data = *(post + j);      //从后序序列中读取结点信息
     x = m;
 
-	//在中序中找到根节点位置
+    //在中序中找到根节点位置
     for (; *(in + x) != *(post + j); x++)
-		    ;
+        ;
 
     //接下来递归完成左右子树的构建
     if (x == m) 
-		    p->lchild = NULL;
+        p->lchild = NULL;
     else
     {
         p->lchild = ReBuildTree(post, i, i+x-m-1, in, m, x-1);
     }
 
     if (x == n) 
-		p->rchild = NULL;
+	p->rchild = NULL;
 
     else
     {
