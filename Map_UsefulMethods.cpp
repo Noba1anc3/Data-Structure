@@ -4,7 +4,6 @@
 #include <iostream>
 using namespace std;
 
-//1525
 int main(){
 	int i, pair, key, value;
 	map<int, int> m;
