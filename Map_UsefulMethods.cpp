@@ -1,12 +1,23 @@
+#include <cstdio>
 #include <map>
+#include <string>
+#include <iostream>
+using namespace std;
 
-map<string, int> mp;
+//1525
+int main(){
+	int i, pair, key, value;
+	map<int, int> m;
+	cin>>pair;
+	for(i = 0; i < pair; i++){
+		cin>>key>>value;
+		m[key] = value;
+	}
 
-mp[s]++;
+	map<int, int>::iterator ite;
+	for(ite = m.begin(); ite != m.end(); ite++)
+		cout<<ite->first<<' '<<ite->second<<'\n';
 
-map<string, int>::iterator itm = mp.begin();
+    return 0;
+}
 
-for(; itm != mp.end(); itm++)
-
-itm->first
-itm->second
