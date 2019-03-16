@@ -9,6 +9,6 @@ public static void findQueen(int row){
 			array[row][column] = 1;
 			findQueue(row+1);
 			array[row][column] = 0;
-    }
-  }
+   		}
+  	}
 }
