@@ -1,6 +1,6 @@
 void print(){
 	char c;
-	scanf(%c,&c);
+	scanf("%c",&c);
 	if( c != '#'){
 		print();
 		printf("%c",c);
